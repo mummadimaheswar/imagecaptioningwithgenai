@@ -1,6 +1,6 @@
-streamlit
-transformers
-torch
-pillow
-datasets
-requests
+torch>=1.9.0
+transformers>=4.21.0
+gradio>=3.0.0
+Pillow>=8.3.0
+requests>=2.25.0
+numpy>=1.21.0
