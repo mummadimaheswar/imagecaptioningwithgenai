@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Captioning Chatbot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="chat-header">
+            <div class="header-content">
+                <i class="fas fa-robot"></i>
+                <h1>AI Image Captioning Chatbot</h1>
+                <p>Upload images and get AI-generated captions!</p>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI image captioning assistant. Upload an image and I'll describe what I see!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input type="text" id="messageInput" placeholder="Type a message or upload an image..." class="message-input">
+                    <label for="imageInput" class="image-upload-btn" title="Upload Image">
+                        <i class="fas fa-image"></i>
+                    </label>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                    <button id="sendButton" class="send-btn" title="Send Message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-panel" id="settingsPanel">
+            <div class="settings-header">
+                <h3>Caption Settings</h3>
+                <button id="closeSettings" class="close-btn">&times;</button>
+            </div>
+            <div class="settings-content">
+                <div class="setting-group">
+                    <label for="maxLength">Max Caption Length:</label>
+                    <input type="range" id="maxLength" min="20" max="100" value="50">
+                    <span id="maxLengthValue">50</span>
+                </div>
+                <div class="setting-group">
+                    <label for="numBeams">Generation Quality:</label>
+                    <input type="range" id="numBeams" min="1" max="10" value="5">
+                    <span id="numBeamsValue">5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="floating-buttons">
+            <button id="settingsBtn" class="floating-btn" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+            <button id="clearBtn" class="floating-btn" title="Clear Chat">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-brain"></i>
+            <p>Analyzing image...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
